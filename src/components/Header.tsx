@@ -93,7 +93,7 @@ const Header = () => {
               <SheetContent side="left" className="p-0 w-3/4 max-w-xs">
                 <div className="flex items-center justify-between px-4 py-3 border-b">
                   <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
-                  <img src={logo88E0} alt="New Logo" className="!h-15 w-auto object-contain rounded" />
+                  <img src={logo88E0} alt="New Logo" className="!h-10 w-auto object-contain rounded" />
                   <SheetClose asChild>
                     <Button variant="ghost" size="icon" className="h-8 w-8">
                       <span className="sr-only">Close</span>
