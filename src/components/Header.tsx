@@ -80,7 +80,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Header */}
-        <div className=" md:hidden h-14 flex items-center px-4 w-full">
+        <div className="md:hidden h-14 flex items-center px-4 w-full relative justify-between">
           {/* Left: Hamburger + WhatsApp logo */}
           <div className="flex items-center gap-2">
             <Sheet>
@@ -115,12 +115,12 @@ const Header = () => {
             </Sheet>
             <img src={whatsappLogo} alt="WhatsApp Logo" className="h-7 w-7 rounded" />
           </div>
-          {/* Center: logo88E0 */}
-          <div className="flex-1 flex justify-center items-center">
+          {/* Center: logo88E0 (absolute for perfect centering) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none">
             <img src={logo88E0} alt="New Logo" className="h-10 w-auto max-w-[160px] object-contain" />
           </div>
           {/* Right: User + Cart icons */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 ml-auto">
             <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
               <User className="h-7 w-7" />
             </Button>
@@ -134,14 +134,14 @@ const Header = () => {
             </Button>
           </div>
         </div>
-        {/* Search Bar below header */}
+        {/* Search Bar below header - rounded */}
         <div className="relative px-2 mt-2">
           <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
           <Input
             placeholder="Search for products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 pr-4 h-10 w-full"
+            className="pl-10 pr-4 h-10 w-full rounded-full bg-gray-100 border-none shadow-sm"
           />
         </div>
 
