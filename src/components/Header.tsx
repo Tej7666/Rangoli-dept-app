@@ -50,8 +50,8 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Search Bar */}
-          <div className="w-full md:flex-1 md:mx-8 md:max-w-xl mt-2 md:mt-0">
+          {/* Search Bar - desktop only */}
+          <div className="w-full md:flex-1 md:mx-8 md:max-w-xl mt-2 md:mt-0 hidden md:block">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
@@ -80,12 +80,13 @@ const Header = () => {
         </div>
 
         {/* Mobile Header */}
-        <div className="md:hidden h-14 flex items-center px-4 w-full relative justify-between">
+        <div className="md:hidden h-14 flex items-center px-0 w-full relative justify-between">
           {/* Left: Hamburger + WhatsApp logo */}
           <div className="flex items-center gap-2">
+            {/* Hamburger menu flush left */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
+                <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center -ml-4">
                   <Menu className="h-7 w-7" />
                 </Button>
               </SheetTrigger>
@@ -134,8 +135,8 @@ const Header = () => {
             </Button>
           </div>
         </div>
-        {/* Search Bar below header - rounded */}
-        <div className="relative px-2 mt-2">
+        {/* Search Bar below header - rounded, only on mobile */}
+        <div className="relative px-2 mt-2 block md:hidden">
           <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
           <Input
             placeholder="Search for products..."
