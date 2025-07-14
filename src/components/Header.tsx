@@ -80,44 +80,46 @@ const Header = () => {
         </div>
 
         {/* Mobile Header */}
-        <div className="block md:hidden h-14 flex items-center px-4 w-full">
-          {/* Hamburger menu */}
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
-                <Menu className="h-7 w-7" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="p-0 w-3/4 max-w-xs">
-              <div className="flex items-center justify-between px-4 py-3 border-b">
-                <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
-                <img src={logo88E0} alt="New Logo" className="h-6 w-auto object-contain rounded" />
-                <SheetClose asChild>
-                  <Button variant="ghost" size="icon" className="h-8 w-8">
-                    <span className="sr-only">Close</span>
-                    <Menu className="h-6 w-6 rotate-45" />
-                  </Button>
-                </SheetClose>
-              </div>
-              <nav className="flex flex-col divide-y">
-                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Stationery</Button>
-                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Office Supplies</Button>
-                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Art Supplies</Button>
-                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Craft Material</Button>
-                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Best Sellers</Button>
-                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Shop By Brand</Button>
-                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Popular on Reels</Button>
-                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Back to School</Button>
-                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Clearance</Button>
-              </nav>
-            </SheetContent>
-          </Sheet>
-          {/* Logo icon and text */}
-          <div className="flex items-center flex-1 justify-center gap-2 min-w-0">
+        <div className=" md:hidden h-14 flex items-center px-4 w-full">
+          {/* Left: Hamburger + WhatsApp logo */}
+          <div className="flex items-center gap-2">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
+                  <Menu className="h-7 w-7" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="p-0 w-3/4 max-w-xs">
+                <div className="flex items-center justify-between px-4 py-3 border-b">
+                  <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
+                  <img src={logo88E0} alt="New Logo" className="h-6 w-auto object-contain rounded" />
+                  <SheetClose asChild>
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <span className="sr-only">Close</span>
+                      <Menu className="h-6 w-6 rotate-45" />
+                    </Button>
+                  </SheetClose>
+                </div>
+                <nav className="flex flex-col divide-y">
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Stationery</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Office Supplies</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Art Supplies</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Craft Material</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Best Sellers</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Shop By Brand</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Popular on Reels</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Back to School</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Clearance</Button>
+                </nav>
+              </SheetContent>
+            </Sheet>
             <img src={whatsappLogo} alt="WhatsApp Logo" className="h-7 w-7 rounded" />
-            <img src={logo88E0} alt="New Logo" className="h-7 object-contain max-w-[110px]" />
           </div>
-          {/* Cart and User icons */}
+          {/* Center: logo88E0 */}
+          <div className="flex-1 flex justify-center items-center">
+            <img src={logo88E0} alt="New Logo" className="h-10 w-auto max-w-[160px] object-contain" />
+          </div>
+          {/* Right: User + Cart icons */}
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
               <User className="h-7 w-7" />
