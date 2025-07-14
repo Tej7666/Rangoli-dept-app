@@ -113,10 +113,10 @@ const Header = () => {
                 </nav>
               </SheetContent>
             </Sheet>
-            {/* Centered logo - improved alignment and spacing */}
-            <div className="flex items-center justify-center gap-2 flex-1">
-              <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
-              <img src={logo88E0} alt="New Logo" className="h-8 max-w-[120px] object-contain rounded" />
+            {/* WhatsApp logo next to hamburger, logo88E0 fills center */}
+            <div className="flex items-center flex-1 min-w-0">
+              <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded ml-2 mr-2" />
+              <img src={logo88E0} alt="New Logo" className="flex-1 h-8 object-contain rounded max-w-full" />
             </div>
             {/* User and Cart icons */}
             <div className="flex items-center gap-2">
