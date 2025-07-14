@@ -118,7 +118,7 @@ const Header = () => {
           </div>
           {/* Center: logo88E0 (absolute for perfect centering) */}
           <div className="absolute !pl-4 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none">
-            <img src={logo88E0} alt="New Logo" className="!h-11 !w-auto max-w-[200px] object-contain" />
+            <img src={logo88E0} alt="New Logo" className="!h-8 !w-auto max-w-[200px] object-contain" />
           </div>
           {/* Right: User + Cart icons */}
           <div className="flex items-center gap-2 ml-auto">
