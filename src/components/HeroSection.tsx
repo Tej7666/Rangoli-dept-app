@@ -1,28 +1,30 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBanner from "@/assets/hero-banner.jpg";
+import heroBanner from "@/assets/hero-banner.png";
+import heroBanner2 from "@/assets/hero-banner2.png";
+import heroBanner3 from "@/assets/hero-banner3.png";
 
 const heroSlides = [
   {
     id: 1,
-    title: "BRAND width Full!!!",
-    subtitle: "Every Stationery Brand You Love, At One Place.",
+    //title: "BRAND width Full!!!",
+    //subtitle: "Every Stationery Brand You Love, At One Place.",
     image: heroBanner,
-    cta: "Shop Now"
+    //cta: "Shop Now"
   },
   {
     id: 2,
-    title: "Back to School Sale",
-    subtitle: "Get up to 50% off on all school supplies",
-    image: heroBanner,
-    cta: "Explore Deals"
+    //title: "Back to School Sale",
+    //subtitle: "Get up to 50% off on all school supplies",
+    image: heroBanner2,
+    //cta: "Explore Deals"
   },
   {
     id: 3,
-    title: "Premium Art Supplies",
-    subtitle: "Professional quality materials for artists",
-    image: heroBanner,
+    //title: "Premium Art Supplies",
+    //subtitle: "Professional quality materials for artists",
+    image: heroBanner3,
     cta: "Shop Art"
   }
 ];
@@ -59,7 +61,7 @@ const HeroSection = () => {
               className="h-full bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="h-full bg-black/20 flex items-center">
+             {/* <div className="h-full bg-black/20 flex items-center">
                 <div className="container mx-auto px-4">
                   <div className="max-w-2xl text-center mx-auto animate-fade-in px-2 md:px-0">
                     <h2 className="text-3xl md:text-5xl font-bold mb-4">
@@ -74,7 +76,7 @@ const HeroSection = () => {
                     </Button>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}

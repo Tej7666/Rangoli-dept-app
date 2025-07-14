@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Search, ShoppingCart, Menu, ChevronDown, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +12,9 @@ import { Badge } from "@/components/ui/badge";
 import whatsappLogo from "@/assets/WhatsApp Image 2025-07-14 at 14.22.28.jpeg";
 import logo88E0 from "@/assets/88E0AA42-E918-4B68-AA07-00A0651EC458_4_5005_c.jpeg";
 import { Sheet, SheetTrigger, SheetContent, SheetClose } from "@/components/ui/sheet";
+import { Link } from "react-router-dom";
+import { useCart } from "./CartContext";
+import React from "react";
 
 const categories = [
   {
@@ -34,8 +36,9 @@ const categories = [
 ];
 
 const Header = () => {
-  const [cartCount] = useState(3);
-  const [searchQuery, setSearchQuery] = useState("");
+  const { items } = useCart();
+  const cartCount = items.reduce((sum, item) => sum + item.quantity, 0);
+  const [searchQuery, setSearchQuery] = React.useState("");
 
   return (
     <header className="border-b bg-background">
@@ -68,14 +71,16 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="h-10 w-10 md:h-12 md:w-12">
               <User className="h-6 w-6 md:h-8 md:w-8" />
             </Button>
-            <Button variant="ghost" size="icon" className="relative h-10 w-10 md:h-12 md:w-12">
-              <ShoppingCart className="h-6 w-6 md:h-8 md:w-8" />
-              {cartCount > 0 && (
-                <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 md:h-6 md:w-6 flex items-center justify-center text-xs">
-                  {cartCount}
-                </Badge>
-              )}
-            </Button>
+            <Link to="/cart">
+              <Button variant="ghost" size="icon" className="relative h-10 w-10 md:h-12 md:w-12">
+                <ShoppingCart className="h-6 w-6 md:h-8 md:w-8" />
+                {cartCount > 0 && (
+                  <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 md:h-6 md:w-6 flex items-center justify-center text-xs">
+                    {cartCount}
+                  </Badge>
+                )}
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -125,14 +130,16 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
               <User className="!h-9 !w-9" />
             </Button>
-            <Button variant="ghost" size="icon" className="relative h-10 w-10 p-0 flex items-center justify-center">
-              <ShoppingCart className="!h-9 !w-9" />
-              {cartCount > 0 && (
-                <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
-                  {cartCount}
-                </Badge>
-              )}
-            </Button>
+            <Link to="/cart">
+              <Button variant="ghost" size="icon" className="relative h-10 w-10 p-0 flex items-center justify-center">
+                <ShoppingCart className="!h-9 !w-9" />
+                {cartCount > 0 && (
+                  <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
+                    {cartCount}
+                  </Badge>
+                )}
+              </Button>
+            </Link>
           </div>
         </div>
         {/* Search Bar below header - rounded, only on mobile */}

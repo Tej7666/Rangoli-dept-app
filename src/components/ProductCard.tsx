@@ -2,6 +2,7 @@ import { Star, ShoppingCart, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useCart } from "./CartContext";
 
 interface ProductCardProps {
   id: string;
@@ -18,6 +19,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({
+  id,
   name,
   brand,
   price,
@@ -29,6 +31,8 @@ const ProductCard = ({
   isNew = false,
   isOnSale = false,
 }: ProductCardProps) => {
+  const { addToCart } = useCart();
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -101,7 +105,10 @@ const ProductCard = ({
             </div>
           )}
           
-          <Button className="w-full mt-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+          <Button
+            className="w-full mt-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+            onClick={() => addToCart({ id, name, price, image })}
+          >
             <ShoppingCart className="h-4 w-4 mr-2" />
             Add to Cart
           </Button>
