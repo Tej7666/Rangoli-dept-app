@@ -118,15 +118,20 @@ const Header = () => {
               <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
               <img src={logo88E0} alt="New Logo" className="h-6 w-auto object-contain rounded" />
             </div>
-            {/* Cart icon */}
-            <Button variant="ghost" size="icon" className="h-10 w-10">
-              <ShoppingCart className="h-7 w-7" />
-              {cartCount > 0 && (
-                <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
-                  {cartCount}
-                </Badge>
-              )}
-            </Button>
+            {/* User and Cart icons */}
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="icon" className="h-10 w-10">
+                <User className="h-7 w-7" />
+              </Button>
+              <Button variant="ghost" size="icon" className="relative h-10 w-10">
+                <ShoppingCart className="h-7 w-7" />
+                {cartCount > 0 && (
+                  <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
+                    {cartCount}
+                  </Badge>
+                )}
+              </Button>
+            </div>
           </div>
           {/* Search Bar below header */}
           <div className="relative mt-2 px-2">
@@ -140,8 +145,8 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Navigation Row */}
-        <div className="border-t py-3">
+        {/* Navigation Row - Desktop only */}
+        <div className="border-t py-3 hidden md:block">
           <nav className="flex items-center space-x-8">
             {categories.map((category) => (
               <DropdownMenu key={category.name}>
