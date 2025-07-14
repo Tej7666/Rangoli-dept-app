@@ -80,69 +80,67 @@ const Header = () => {
         </div>
 
         {/* Mobile Header */}
-        <div className="block md:hidden py-3 space-y-2">
-          <div className="flex items-center justify-between w-full px-2">
-            {/* Hamburger menu */}
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10">
-                  <Menu className="h-7 w-7" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="p-0 w-3/4 max-w-xs">
-                <div className="flex items-center justify-between px-4 py-3 border-b">
-                  <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
-                  <img src={logo88E0} alt="New Logo" className="h-6 w-auto object-contain rounded" />
-                  <SheetClose asChild>
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <span className="sr-only">Close</span>
-                      <Menu className="h-6 w-6 rotate-45" />
-                    </Button>
-                  </SheetClose>
-                </div>
-                <nav className="flex flex-col divide-y">
-                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Stationery</Button>
-                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Office Supplies</Button>
-                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Art Supplies</Button>
-                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Craft Material</Button>
-                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Best Sellers</Button>
-                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Shop By Brand</Button>
-                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Popular on Reels</Button>
-                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Back to School</Button>
-                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Clearance</Button>
-                </nav>
-              </SheetContent>
-            </Sheet>
-            {/* WhatsApp logo next to hamburger, logo88E0 fills center */}
-            <div className="flex items-center flex-1 min-w-0">
-              <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded ml-2 mr-2" />
-              <img src={logo88E0} alt="New Logo" className="flex-1 h-8 object-contain rounded max-w-full" />
-            </div>
-            {/* User and Cart icons */}
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" className="h-10 w-10">
-                <User className="h-7 w-7" />
+        <div className="block md:hidden h-14 flex items-center px-4 w-full">
+          {/* Hamburger menu */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
+                <Menu className="h-7 w-7" />
               </Button>
-              <Button variant="ghost" size="icon" className="relative h-10 w-10">
-                <ShoppingCart className="h-7 w-7" />
-                {cartCount > 0 && (
-                  <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
-                    {cartCount}
-                  </Badge>
-                )}
-              </Button>
-            </div>
+            </SheetTrigger>
+            <SheetContent side="left" className="p-0 w-3/4 max-w-xs">
+              <div className="flex items-center justify-between px-4 py-3 border-b">
+                <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
+                <img src={logo88E0} alt="New Logo" className="h-6 w-auto object-contain rounded" />
+                <SheetClose asChild>
+                  <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <span className="sr-only">Close</span>
+                    <Menu className="h-6 w-6 rotate-45" />
+                  </Button>
+                </SheetClose>
+              </div>
+              <nav className="flex flex-col divide-y">
+                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Stationery</Button>
+                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Office Supplies</Button>
+                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Art Supplies</Button>
+                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Craft Material</Button>
+                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Best Sellers</Button>
+                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Shop By Brand</Button>
+                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Popular on Reels</Button>
+                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Back to School</Button>
+                <Button variant="ghost" className="justify-start w-full rounded-none py-4">Clearance</Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+          {/* Logo icon and text */}
+          <div className="flex items-center flex-1 justify-center gap-2 min-w-0">
+            <img src={whatsappLogo} alt="WhatsApp Logo" className="h-7 w-7 rounded" />
+            <img src={logo88E0} alt="New Logo" className="h-7 object-contain max-w-[110px]" />
           </div>
-          {/* Search Bar below header */}
-          <div className="relative mt-2 px-2">
-            <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-            <Input
-              placeholder="Search for products..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-4 h-10 w-full"
-            />
+          {/* Cart and User icons */}
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
+              <User className="h-7 w-7" />
+            </Button>
+            <Button variant="ghost" size="icon" className="relative h-10 w-10 p-0 flex items-center justify-center">
+              <ShoppingCart className="h-7 w-7" />
+              {cartCount > 0 && (
+                <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
+                  {cartCount}
+                </Badge>
+              )}
+            </Button>
           </div>
+        </div>
+        {/* Search Bar below header */}
+        <div className="relative px-2 mt-2">
+          <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+          <Input
+            placeholder="Search for products..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="pl-10 pr-4 h-10 w-full"
+          />
         </div>
 
         {/* Navigation Row - Desktop only */}
