@@ -2,7 +2,8 @@ import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "luci
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import logo from "@/assets/logo.png";
+import whatsappLogo from "@/assets/WhatsApp Image 2025-07-14 at 14.22.28.jpeg";
+import logo88E0 from "@/assets/88E0AA42-E918-4B68-AA07-00A0651EC458_4_5005_c.jpeg";
 
 const Footer = () => {
   return (
@@ -12,8 +13,8 @@ const Footer = () => {
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="Scooboo" className="h-8 w-8" />
-              <h3 className="text-xl font-bold text-primary">SCOOBOO</h3>
+              <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
+              <img src={logo88E0} alt="New Logo" className="h-8 w-auto rounded" />
             </div>
             <p className="text-muted-foreground">
               Your one-stop destination for all stationery needs. Quality products from trusted brands at unbeatable prices.
@@ -84,15 +85,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm">+91 98765 43210</span>
+                <span className="text-sm">+91 7775003614</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm">hello@scooboo.in</span>
+                <span className="text-sm">hello@rangolidepartmentt.in</span>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 text-muted-foreground mt-1" />
-                <span className="text-sm">123 Business Street, Mumbai, Maharashtra 400001</span>
+                <span className="text-sm">Marketyard, Ganesh Nagar, Sangamner, Maharashtra 422605</span>
               </div>
             </div>
             

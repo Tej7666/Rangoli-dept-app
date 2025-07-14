@@ -10,7 +10,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
-import logo from "@/assets/logo.png";
+import whatsappLogo from "@/assets/WhatsApp Image 2025-07-14 at 14.22.28.jpeg";
+import logo88E0 from "@/assets/88E0AA42-E918-4B68-AA07-00A0651EC458_4_5005_c.jpeg";
 
 const categories = [
   {
@@ -41,9 +42,11 @@ const Header = () => {
         {/* Top Row */}
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img src={logo} alt="Scooboo" className="h-10 w-10" />
-            <h1 className="text-2xl font-bold text-primary">SCOOBOO</h1>
+          <div className="flex items-center min-w-0 pl-0" style={{flexBasis: 0, flexGrow: 1}}>
+            <img src={whatsappLogo} alt="WhatsApp Logo" className="h-16 w-16 rounded flex-shrink-0" style={{marginLeft: 1}} />
+            <div className="flex-1 min-w-0">
+              <img src={logo88E0} alt="New Logo" className=" ml-[88PX] w-[395PX] h-16 object-fill rounded" />
+            </div>
           </div>
 
           {/* Search Bar */}
@@ -60,14 +63,14 @@ const Header = () => {
           </div>
 
           {/* Right Actions */}
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
+          <div className="flex items-center space-x-11">
+            <Button variant="ghost" size="icon" className="h-12 w-12">
+              <User className="h-8 w-8" />
             </Button>
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingCart className="h-5 w-5" />
+            <Button variant="ghost" size="icon" className="relative h-12 w-12">
+              <ShoppingCart className="h-8 w-8" />
               {cartCount > 0 && (
-                <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
+                <Badge variant="destructive" className="absolute -top-2 -right-2 h-6 w-6 flex items-center justify-center text-xs">
                   {cartCount}
                 </Badge>
               )}
