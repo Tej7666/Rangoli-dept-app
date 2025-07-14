@@ -40,37 +40,37 @@ const Header = () => {
     <header className="border-b bg-background">
       <div className="container mx-auto px-4">
         {/* Top Row */}
-        <div className="flex items-center justify-between py-4">
+        <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between py-4">
           {/* Logo */}
-          <div className="flex items-center min-w-0 pl-0" style={{flexBasis: 0, flexGrow: 1}}>
-            <img src={whatsappLogo} alt="WhatsApp Logo" className="h-16 w-16 rounded flex-shrink-0" style={{marginLeft: 1}} />
+          <div className="flex items-center min-w-0 pl-0 w-full md:w-auto" style={{flexBasis: 0, flexGrow: 1}}>
+            <img src={whatsappLogo} alt="WhatsApp Logo" className="h-12 w-12 md:h-16 md:w-16 rounded flex-shrink-0" style={{marginLeft: 1}} />
             <div className="flex-1 min-w-0">
-              <img src={logo88E0} alt="New Logo" className=" ml-[88PX] w-[395PX] h-16 object-fill rounded" />
+              <img src={logo88E0} alt="New Logo" className="w-full max-w-xs md:max-w-lg h-10 md:h-16 object-fill rounded mx-2 md:mx-6" />
             </div>
           </div>
 
           {/* Search Bar */}
-          <div className="flex-1 mx-8 max-w-xl">
+          <div className="w-full md:flex-1 md:mx-8 md:max-w-xl mt-2 md:mt-0">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
                 placeholder="Search for products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4 h-12"
+                className="pl-10 pr-4 h-10 md:h-12"
               />
             </div>
           </div>
 
           {/* Right Actions */}
-          <div className="flex items-center space-x-11">
-            <Button variant="ghost" size="icon" className="h-12 w-12">
-              <User className="h-8 w-8" />
+          <div className="flex items-center justify-end gap-4 mt-2 md:mt-0">
+            <Button variant="ghost" size="icon" className="h-10 w-10 md:h-12 md:w-12">
+              <User className="h-6 w-6 md:h-8 md:w-8" />
             </Button>
-            <Button variant="ghost" size="icon" className="relative h-12 w-12">
-              <ShoppingCart className="h-8 w-8" />
+            <Button variant="ghost" size="icon" className="relative h-10 w-10 md:h-12 md:w-12">
+              <ShoppingCart className="h-6 w-6 md:h-8 md:w-8" />
               {cartCount > 0 && (
-                <Badge variant="destructive" className="absolute -top-2 -right-2 h-6 w-6 flex items-center justify-center text-xs">
+                <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 md:h-6 md:w-6 flex items-center justify-center text-xs">
                   {cartCount}
                 </Badge>
               )}

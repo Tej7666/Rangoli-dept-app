@@ -4,14 +4,14 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const BrandShowcase = () => {
   return (
-    <section className="py-12">
+    <section className="py-6 md:py-12">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2">Shop By Brand</h2>
-          <p className="text-muted-foreground">Explore premium stationery from trusted brands</p>
+        <div className="text-center mb-4 md:mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">Shop By Brand</h2>
+          <p className="text-sm md:text-base text-muted-foreground">Explore premium stationery from trusted brands</p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-8">
           {/* Zebra Brand Feature */}
           <Card className="lg:col-span-2 overflow-hidden group hover:shadow-hover transition-all duration-300">
             <CardContent className="p-0">
@@ -72,7 +72,7 @@ const BrandShowcase = () => {
         </div>
         
         {/* Popular Brands Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4">
           {[
             { name: "Staedtler", logo: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=100&h=100&fit=crop" },
             { name: "Pentel", logo: "https://images.unsplash.com/photo-1544717301-9cdcb1f5940f?w=100&h=100&fit=crop" },

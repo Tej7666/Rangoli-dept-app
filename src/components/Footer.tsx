@@ -8,29 +8,29 @@ import logo88E0 from "@/assets/88E0AA42-E918-4B68-AA07-00A0651EC458_4_5005_c.jpe
 const Footer = () => {
   return (
     <footer className="bg-secondary/50 border-t">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-2 md:px-4 py-6 md:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
-              <img src={logo88E0} alt="New Logo" className="h-8 w-auto rounded" />
+              <img src={whatsappLogo} alt="WhatsApp Logo" className="h-7 w-7 md:h-8 md:w-8 rounded" />
+              <img src={logo88E0} alt="New Logo" className="h-7 w-auto md:h-8 rounded" />
             </div>
             <p className="text-muted-foreground">
               Your one-stop destination for all stationery needs. Quality products from trusted brands at unbeatable prices.
             </p>
-            <div className="flex space-x-3">
-              <Button variant="ghost" size="icon">
-                <Facebook className="h-5 w-5" />
+            <div className="flex space-x-2 md:space-x-3">
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                <Facebook className="h-4 w-4 md:h-5 md:w-5" />
               </Button>
-              <Button variant="ghost" size="icon">
-                <Instagram className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                <Instagram className="h-4 w-4 md:h-5 md:w-5" />
               </Button>
-              <Button variant="ghost" size="icon">
-                <Twitter className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                <Twitter className="h-4 w-4 md:h-5 md:w-5" />
               </Button>
-              <Button variant="ghost" size="icon">
-                <Youtube className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                <Youtube className="h-4 w-4 md:h-5 md:w-5" />
               </Button>
             </div>
           </div>
@@ -110,11 +110,11 @@ const Footer = () => {
         
         <Separator className="my-8" />
         
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-sm text-muted-foreground">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 mt-4">
+          <p className="text-xs md:text-sm text-muted-foreground text-center md:text-left">
             © 2024 Scooboo. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-wrap gap-2 md:gap-4 text-xs md:text-sm text-muted-foreground justify-center md:justify-end">
             <span>We accept:</span>
             <span className="font-medium">Visa • Mastercard • UPI • Net Banking</span>
           </div>

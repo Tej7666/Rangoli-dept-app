@@ -60,18 +60,18 @@ const featuredProducts = [
 
 const FeaturedProducts = () => {
   return (
-    <section className="py-12 bg-secondary/30">
+    <section className="py-6 md:py-12 bg-secondary/30">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 md:mb-8 gap-2 md:gap-0">
           <div>
-            <h2 className="text-3xl font-bold mb-2">Featured Products</h2>
-            <p className="text-muted-foreground">Discover our best-selling stationery items</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">Featured Products</h2>
+            <p className="text-sm md:text-base text-muted-foreground">Discover our best-selling stationery items</p>
           </div>
-          <Button variant="outline">View All</Button>
+          <Button variant="outline" size="sm" className="w-full md:w-auto">View All</Button>
         </div>
         
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}

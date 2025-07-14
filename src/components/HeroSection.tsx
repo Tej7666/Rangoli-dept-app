@@ -46,7 +46,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-[500px] overflow-hidden bg-gradient-to-r from-primary/10 to-accent/10">
+    <section className="relative h-[300px] md:h-[500px] overflow-hidden bg-gradient-to-r from-primary/10 to-accent/10">
       <div className="relative h-full">
         {heroSlides.map((slide, index) => (
           <div
@@ -61,15 +61,15 @@ const HeroSection = () => {
             >
               <div className="h-full bg-black/20 flex items-center">
                 <div className="container mx-auto px-4">
-                  <div className="max-w-2xl text-center mx-auto animate-fade-in">
-                    <h2 className="text-5xl font-bold mb-4">
+                  <div className="max-w-2xl text-center mx-auto animate-fade-in px-2 md:px-0">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">
                       <span className="text-primary">BRAND</span>
                       <span className="text-foreground">width Full!!!</span>
                     </h2>
-                    <p className="text-xl mb-8 text-foreground">
+                    <p className="text-base md:text-xl mb-4 md:mb-8 text-foreground">
                       {slide.subtitle}
                     </p>
-                    <Button size="lg" className="text-lg px-8 py-3">
+                    <Button size="sm" className="text-base md:text-lg px-4 md:px-8 py-2 md:py-3">
                       {slide.cta}
                     </Button>
                   </div>
