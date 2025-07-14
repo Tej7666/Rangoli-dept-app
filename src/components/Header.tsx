@@ -86,14 +86,14 @@ const Header = () => {
             {/* Hamburger menu flush left */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center -ml-4">
-                  <Menu className="h-7 w-7" />
+                <Button variant="ghost" size="icon" className="h-14 w-14 p-0 flex items-center justify-center -ml-4">
+                  <Menu className="!h-10 !w-10" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="p-0 w-3/4 max-w-xs">
                 <div className="flex items-center justify-between px-4 py-3 border-b">
                   <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
-                  <img src={logo88E0} alt="New Logo" className="h-6 w-auto object-contain rounded" />
+                  <img src={logo88E0} alt="New Logo" className="!h-15 w-auto object-contain rounded" />
                   <SheetClose asChild>
                     <Button variant="ghost" size="icon" className="h-8 w-8">
                       <span className="sr-only">Close</span>
@@ -114,19 +114,19 @@ const Header = () => {
                 </nav>
               </SheetContent>
             </Sheet>
-            <img src={whatsappLogo} alt="WhatsApp Logo" className="h-7 w-7 rounded" />
+            <img src={whatsappLogo} alt="WhatsApp Logo" className="!h-10 !w-10 rounded" />
           </div>
           {/* Center: logo88E0 (absolute for perfect centering) */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none">
-            <img src={logo88E0} alt="New Logo" className="h-10 w-auto max-w-[160px] object-contain" />
+          <div className="absolute !pl-4 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none">
+            <img src={logo88E0} alt="New Logo" className="!h-14 !w-auto max-w-[200px] object-contain" />
           </div>
           {/* Right: User + Cart icons */}
           <div className="flex items-center gap-2 ml-auto">
             <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
-              <User className="h-7 w-7" />
+              <User className="!h-10 !w-10" />
             </Button>
             <Button variant="ghost" size="icon" className="relative h-10 w-10 p-0 flex items-center justify-center">
-              <ShoppingCart className="h-7 w-7" />
+              <ShoppingCart className="!h-10 !w-10" />
               {cartCount > 0 && (
                 <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
                   {cartCount}
@@ -136,13 +136,13 @@ const Header = () => {
           </div>
         </div>
         {/* Search Bar below header - rounded, only on mobile */}
-        <div className="relative px-2 mt-2 block md:hidden">
+        <div className="relative px-2 mt-1 block md:hidden">
           <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
           <Input
             placeholder="Search for products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 pr-4 h-10 w-full rounded-full bg-gray-100 border-none shadow-sm"
+            className="pl-10 pr-4 pt-4 pb-4 mt-4 mb-4 !h-10 w-full rounded-full bg-gray-100 border-none shadow-sm"
           />
         </div>
 
