@@ -39,8 +39,8 @@ const Header = () => {
   return (
     <header className="border-b bg-background">
       <div className="container mx-auto px-4">
-        {/* Top Row */}
-        <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between py-4">
+        {/* Desktop Header */}
+        <div className="hidden md:flex flex-col gap-2 md:flex-row md:items-center md:justify-between py-4">
           {/* Logo */}
           <div className="flex items-center min-w-0 pl-0 w-full md:w-auto" style={{flexBasis: 0, flexGrow: 1}}>
             <img src={whatsappLogo} alt="WhatsApp Logo" className="h-12 w-12 md:h-16 md:w-16 rounded flex-shrink-0" style={{marginLeft: 1}} />
@@ -71,6 +71,55 @@ const Header = () => {
               <ShoppingCart className="h-6 w-6 md:h-8 md:w-8" />
               {cartCount > 0 && (
                 <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 md:h-6 md:w-6 flex items-center justify-center text-xs">
+                  {cartCount}
+                </Badge>
+              )}
+            </Button>
+          </div>
+        </div>
+
+        {/* Mobile Header */}
+        <div className="block md:hidden py-3 space-y-2">
+          {/* Logo Row */}
+          <div className="flex items-center gap-2">
+            <img src={whatsappLogo} alt="WhatsApp Logo" className="h-10 w-10 rounded flex-shrink-0" />
+            <img src={logo88E0} alt="New Logo" className="h-8 w-auto object-contain rounded flex-1" />
+          </div>
+          {/* Search Bar */}
+          <div className="relative mt-2">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+            <Input
+              placeholder="Search for products..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 pr-4 h-10"
+            />
+          </div>
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center gap-1 overflow-x-auto text-sm mt-2 pb-1">
+            <span className="text-muted-foreground">Home</span>
+            <span className="text-muted-foreground">/</span>
+            <span className="text-primary">Categories</span>
+            <span className="text-muted-foreground">/</span>
+            <span className="text-primary">Best Sellers</span>
+            <span className="text-muted-foreground">/</span>
+            <span className="text-primary">Shop By Brand</span>
+            <span className="text-muted-foreground">/</span>
+            <span className="text-primary">Popular on Reels</span>
+            <span className="text-muted-foreground">/</span>
+            <span className="text-primary">Back to School</span>
+            <span className="text-muted-foreground">/</span>
+            <span className="text-primary">Clearance</span>
+          </nav>
+          {/* Right Actions */}
+          <div className="flex items-center gap-3 mt-2">
+            <Button variant="ghost" size="icon" className="h-10 w-10">
+              <User className="h-6 w-6" />
+            </Button>
+            <Button variant="ghost" size="icon" className="relative h-10 w-10">
+              <ShoppingCart className="h-6 w-6" />
+              {cartCount > 0 && (
+                <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
                   {cartCount}
                 </Badge>
               )}
