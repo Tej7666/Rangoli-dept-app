@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, ShoppingCart, User, Menu, ChevronDown } from "lucide-react";
+import { Search, ShoppingCart, Menu, ChevronDown, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,6 +12,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import whatsappLogo from "@/assets/WhatsApp Image 2025-07-14 at 14.22.28.jpeg";
 import logo88E0 from "@/assets/88E0AA42-E918-4B68-AA07-00A0651EC458_4_5005_c.jpeg";
+import { Sheet, SheetTrigger, SheetContent, SheetClose } from "@/components/ui/sheet";
 
 const categories = [
   {
@@ -80,50 +81,62 @@ const Header = () => {
 
         {/* Mobile Header */}
         <div className="block md:hidden py-3 space-y-2">
-          {/* Logo Row */}
-          <div className="flex items-center gap-2">
-            <img src={whatsappLogo} alt="WhatsApp Logo" className="h-10 w-10 rounded flex-shrink-0" />
-            <img src={logo88E0} alt="New Logo" className="h-8 w-auto object-contain rounded flex-1" />
-          </div>
-          {/* Search Bar */}
-          <div className="relative mt-2">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-            <Input
-              placeholder="Search for products..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-4 h-10"
-            />
-          </div>
-          {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-1 overflow-x-auto text-sm mt-2 pb-1">
-            <span className="text-muted-foreground">Home</span>
-            <span className="text-muted-foreground">/</span>
-            <span className="text-primary">Categories</span>
-            <span className="text-muted-foreground">/</span>
-            <span className="text-primary">Best Sellers</span>
-            <span className="text-muted-foreground">/</span>
-            <span className="text-primary">Shop By Brand</span>
-            <span className="text-muted-foreground">/</span>
-            <span className="text-primary">Popular on Reels</span>
-            <span className="text-muted-foreground">/</span>
-            <span className="text-primary">Back to School</span>
-            <span className="text-muted-foreground">/</span>
-            <span className="text-primary">Clearance</span>
-          </nav>
-          {/* Right Actions */}
-          <div className="flex items-center gap-3 mt-2">
+          <div className="flex items-center justify-between w-full px-2">
+            {/* Hamburger menu */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-10 w-10">
+                  <Menu className="h-7 w-7" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="p-0 w-3/4 max-w-xs">
+                <div className="flex items-center justify-between px-4 py-3 border-b">
+                  <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
+                  <img src={logo88E0} alt="New Logo" className="h-6 w-auto object-contain rounded" />
+                  <SheetClose asChild>
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <span className="sr-only">Close</span>
+                      <Menu className="h-6 w-6 rotate-45" />
+                    </Button>
+                  </SheetClose>
+                </div>
+                <nav className="flex flex-col divide-y">
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Stationery</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Office Supplies</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Art Supplies</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Craft Material</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Best Sellers</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Shop By Brand</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Popular on Reels</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Back to School</Button>
+                  <Button variant="ghost" className="justify-start w-full rounded-none py-4">Clearance</Button>
+                </nav>
+              </SheetContent>
+            </Sheet>
+            {/* Centered logo */}
+            <div className="flex items-center gap-2 flex-1 justify-center">
+              <img src={whatsappLogo} alt="WhatsApp Logo" className="h-8 w-8 rounded" />
+              <img src={logo88E0} alt="New Logo" className="h-6 w-auto object-contain rounded" />
+            </div>
+            {/* Cart icon */}
             <Button variant="ghost" size="icon" className="h-10 w-10">
-              <User className="h-6 w-6" />
-            </Button>
-            <Button variant="ghost" size="icon" className="relative h-10 w-10">
-              <ShoppingCart className="h-6 w-6" />
+              <ShoppingCart className="h-7 w-7" />
               {cartCount > 0 && (
                 <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
                   {cartCount}
                 </Badge>
               )}
             </Button>
+          </div>
+          {/* Search Bar below header */}
+          <div className="relative mt-2 px-2">
+            <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+            <Input
+              placeholder="Search for products..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 pr-4 h-10 w-full"
+            />
           </div>
         </div>
 
