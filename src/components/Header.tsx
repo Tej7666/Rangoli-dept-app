@@ -87,7 +87,7 @@ const Header = () => {
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="h-14 w-14 p-0 flex items-center justify-center -ml-4">
-                  <Menu className="!h-10 !w-10" />
+                  <Menu className="!h-9 !w-9" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="p-0 w-3/4 max-w-xs">
@@ -114,19 +114,19 @@ const Header = () => {
                 </nav>
               </SheetContent>
             </Sheet>
-            <img src={whatsappLogo} alt="WhatsApp Logo" className="!h-10 !w-10 rounded" />
+            <img src={whatsappLogo} alt="WhatsApp Logo" className="!h-9 !w-9 rounded" />
           </div>
           {/* Center: logo88E0 (absolute for perfect centering) */}
           <div className="absolute !pl-4 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none">
-            <img src={logo88E0} alt="New Logo" className="!h-14 !w-auto max-w-[200px] object-contain" />
+            <img src={logo88E0} alt="New Logo" className="!h-11 !w-auto max-w-[200px] object-contain" />
           </div>
           {/* Right: User + Cart icons */}
           <div className="flex items-center gap-2 ml-auto">
             <Button variant="ghost" size="icon" className="h-10 w-10 p-0 flex items-center justify-center">
-              <User className="!h-10 !w-10" />
+              <User className="!h-9 !w-9" />
             </Button>
             <Button variant="ghost" size="icon" className="relative h-10 w-10 p-0 flex items-center justify-center">
-              <ShoppingCart className="!h-10 !w-10" />
+              <ShoppingCart className="!h-9 !w-9" />
               {cartCount > 0 && (
                 <Badge variant="destructive" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-xs">
                   {cartCount}
