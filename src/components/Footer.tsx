@@ -112,7 +112,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 mt-4">
           <p className="text-xs md:text-sm text-muted-foreground text-center md:text-left">
-            © 2024 Scooboo. All rights reserved.
+            © 1998 Rangoli Department Store. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-2 md:gap-4 text-xs md:text-sm text-muted-foreground justify-center md:justify-end">
             <span>We accept:</span>
